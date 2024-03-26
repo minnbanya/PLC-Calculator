@@ -519,7 +519,7 @@ class Grammar(object):
 
         if start not in self.Nonterminals:
             raise GrammarError(f'start symbol {start} undefined')
-        self.Productions[0] = Production(0, "S'", [start])
+        self.Productions[0] = Production(0, "E'", [start])
         self.Nonterminals[start].append(0)
         self.Start = start
 
@@ -1404,7 +1404,7 @@ class LRTable(object):
 
             for p in I:
                     if p.len == p.lr_index + 1:
-                        if p.name == "S'":
+                        if p.name == "E'":
                             # Start symbol. Accept!
                             st_action['$end'] = 0
                             st_actionp['$end'] = p
