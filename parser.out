@@ -1,6 +1,6 @@
 Grammar:
 
-Rule 0     E' -> E
+Rule 0     S' -> E
 Rule 1     E -> E * T
 Rule 2     E -> T
 Rule 3     T -> T + F
@@ -23,7 +23,7 @@ T                    : 1 2 3
 
 state 0
 
-    (0) E' -> . E
+    (0) S' -> . E
     (1) E -> . E * T
     (2) E -> . T
     (3) T -> . T + F
@@ -37,7 +37,7 @@ state 0
 
 state 1
 
-    (0) E' -> E .
+    (0) S' -> E .
     (1) E -> E . * T
     *               shift and go to state 5
 
